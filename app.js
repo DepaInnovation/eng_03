@@ -178,6 +178,7 @@
     fcTranslation: document.getElementById('fcTranslation'),
     fcOriginal: document.getElementById('fcOriginal'),
     fcChapterBack: document.getElementById('fcChapterBack'),
+    fcDef: document.getElementById('fcDef'),
     fcSpeakBtn: document.getElementById('fcSpeakBtn'),
     fcBtnReview: document.getElementById('fcBtnReview'),
     fcBtnMastered: document.getElementById('fcBtnMastered'),
@@ -231,7 +232,8 @@
 
   function determineDirection() {
     if (state.direction === 'mixed') {
-      return Math.random() > 0.5 ? 'eng-thai' : 'thai-eng';
+      const modes = ['eng-thai', 'def-eng', 'thai-eng'];
+      return modes[Math.floor(Math.random() * modes.length)];
     }
     return state.direction;
   }
@@ -279,12 +281,22 @@
     elements.currentChapterTag.textContent = word.chapterTitle;
     elements.posBadge.textContent = word.type || 'v.';
 
+    // Reset is-definition class
+    elements.questionWord.classList.remove('is-definition');
+
     if (dir === 'eng-thai') {
       elements.questionWord.textContent = word.english;
       elements.questionSubtext.textContent = 'เลือกความหมายภาษาไทยที่ถูกต้อง (คลิกช้อยส์)';
       elements.quizSpeakBtn.style.display = 'inline-flex';
       elements.quizSpeakBtn.onclick = () => speakEnglish(word.english, elements.quizSpeakBtn);
+    } else if (dir === 'def-eng') {
+      elements.questionWord.textContent = word.definition || word.english;
+      elements.questionWord.classList.add('is-definition');
+      elements.questionSubtext.textContent = 'อ่านคำจำกัดความภาษาอังกฤษ แล้วเลือกคำศัพท์ที่ถูกต้อง';
+      elements.quizSpeakBtn.style.display = 'inline-flex';
+      elements.quizSpeakBtn.onclick = () => speakEnglish(word.definition || word.english, elements.quizSpeakBtn);
     } else {
+      // thai-eng
       elements.questionWord.textContent = word.thai;
       elements.questionSubtext.textContent = 'เลือกคำศัพท์ภาษาอังกฤษที่ถูกต้อง (คลิกช้อยส์)';
       elements.quizSpeakBtn.style.display = 'none';
@@ -303,10 +315,11 @@
     const chapterWords = allWords.filter(w => w.id !== correctWord.id);
     const shuffledDistractors = shuffle(chapterWords);
 
+    const isThaiChoice = direction === 'eng-thai';
     const distractors = [];
     for (const w of shuffledDistractors) {
-      const text = direction === 'eng-thai' ? w.thai : w.english;
-      const correctText = direction === 'eng-thai' ? correctWord.thai : correctWord.english;
+      const text = isThaiChoice ? w.thai : w.english;
+      const correctText = isThaiChoice ? correctWord.thai : correctWord.english;
       if (text !== correctText && !distractors.some(d => d.text === text)) {
         distractors.push({
           wordObj: w,
@@ -319,7 +332,7 @@
 
     const correctChoice = {
       wordObj: correctWord,
-      text: direction === 'eng-thai' ? correctWord.thai : correctWord.english,
+      text: isThaiChoice ? correctWord.thai : correctWord.english,
       isCorrect: true
     };
 
@@ -398,14 +411,16 @@
       elements.feedbackBanner.classList.remove('is-wrong');
       elements.feedbackIcon.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
       elements.feedbackTitle.textContent = state.streak >= 3 ? `ยอดเยี่ยมมาก! สตรีค ${state.streak} ข้อติด` : 'ถูกต้อง! ยอดเยี่ยม';
-      elements.feedbackDesc.innerHTML = `<strong>${currentWord.english}</strong> (${currentWord.type}) = ${currentWord.thai}`;
+      
+      const defHtml = currentWord.definition ? `<div style="font-size:0.8rem;color:var(--text-muted);font-style:italic;margin-top:3px;">"${currentWord.definition}"</div>` : '';
+      elements.feedbackDesc.innerHTML = `<strong>${currentWord.english}</strong> (${currentWord.type}) = ${currentWord.thai}${defHtml}`;
       elements.feedbackBanner.style.display = 'flex';
 
       // Auto advance or wait for click
       if (state.autoAdvance) {
         state.autoAdvanceTimer = setTimeout(() => {
           advanceToNextWord(true);
-        }, 1100);
+        }, 1200);
       }
     } else {
       // Wrong Answer!
@@ -420,7 +435,9 @@
       elements.feedbackBanner.classList.add('is-wrong');
       elements.feedbackIcon.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
       elements.feedbackTitle.textContent = 'ยังไม่ถูกต้องนะ! จำไว้นะ';
-      elements.feedbackDesc.innerHTML = `เฉลย: <strong>${currentWord.english}</strong> (${currentWord.type}) = <span style="color:#2e6c47;font-weight:700;">${currentWord.thai}</span>`;
+      
+      const defHtml = currentWord.definition ? `<div style="font-size:0.8rem;color:var(--text-muted);font-style:italic;margin-top:3px;">"${currentWord.definition}"</div>` : '';
+      elements.feedbackDesc.innerHTML = `เฉลย: <strong>${currentWord.english}</strong> (${currentWord.type}) = <span style="color:#2e6c47;font-weight:700;">${currentWord.thai}</span>${defHtml}`;
       elements.feedbackBanner.style.display = 'flex';
 
       // Intelligent Spaced Repetition: Re-insert this missed word 3-4 steps ahead so it loops back soon!
@@ -500,6 +517,9 @@
     elements.fcPos.textContent = word.type || 'v.';
     elements.fcTranslation.textContent = word.thai;
     elements.fcOriginal.textContent = `${word.english} (${word.type || ''})`;
+    if (elements.fcDef) {
+      elements.fcDef.textContent = word.definition ? `"${word.definition}"` : '';
+    }
     elements.fcProgressText.textContent = `คำที่ ${state.fcIndex + 1} จากทั้งหมด ${state.fcQueue.length} คำ`;
   }
 
@@ -651,6 +671,7 @@
       return (
         w.english.toLowerCase().includes(query) ||
         w.thai.toLowerCase().includes(query) ||
+        (w.definition && w.definition.toLowerCase().includes(query)) ||
         (w.type && w.type.toLowerCase().includes(query))
       );
     });
@@ -676,6 +697,7 @@
           </button>
         </div>
         <div class="word-item-meaning">${w.thai}</div>
+        ${w.definition ? `<div class="word-item-def">"${w.definition}"</div>` : ''}
         <div class="word-item-footer">
           <span class="item-chapter">${w.chapterShort}</span>
         </div>

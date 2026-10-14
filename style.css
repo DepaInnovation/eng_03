@@ -664,6 +664,17 @@ body {
   line-height: 1.25;
 }
 
+.question-prompt.is-definition {
+  font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.55;
+  max-width: 680px;
+  margin: 6px auto 10px;
+  padding: 0 10px;
+  letter-spacing: 0;
+}
+
 .question-subtext {
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -1022,6 +1033,21 @@ body {
   color: var(--text-muted);
 }
 
+.card-def {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 8px;
+  line-height: 1.45;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-subtle);
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .card-bottom {
   border-top: 1px solid var(--border-subtle);
   padding-top: 8px;
@@ -1329,6 +1355,14 @@ body {
   font-size: 0.9rem;
   color: var(--accent-brown);
   font-weight: 600;
+}
+
+.word-item-def {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.4;
+  margin-top: 2px;
 }
 
 .word-item-footer {

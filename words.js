@@ -1,4 +1,4 @@
-// Vocabulary database with 6 chapters
+// Vocabulary database with 6 chapters and full English definitions
 const VOCABULARY_DATA = [
   // บทที่ 1: Entertainment
   {
@@ -8,7 +8,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.1 Entertainment",
     english: "actress",
     thai: "นักแสดงหญิง",
-    type: "n."
+    type: "n.",
+    definition: "a woman who acts in plays, movies, or television shows"
   },
   {
     id: "c1_02",
@@ -17,7 +18,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.1 Entertainment",
     english: "ambition",
     thai: "ความทะเยอทะยาน",
-    type: "n."
+    type: "n.",
+    definition: "a strong desire to achieve something, such as success, power, or fame"
   },
   {
     id: "c1_03",
@@ -26,7 +28,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.1 Entertainment",
     english: "attention spans",
     thai: "ช่วงเวลาที่จดจ่อได้",
-    type: "n."
+    type: "n.",
+    definition: "the length of time a person can focus on one thing before losing interest"
   },
   {
     id: "c1_04",
@@ -34,8 +37,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Entertainment (ความบันเทิง)",
     chapterShort: "Ch.1 Entertainment",
     english: "binge-watching",
-    thai: "การดูรวดเดียวหลายตอนต่อเนื่อง",
-    type: "n."
+    thai: "การดูรวดเดียวหลายตอน",
+    type: "v.",
+    definition: "watching many episodes of a TV series one after another in a single session"
   },
   {
     id: "c1_05",
@@ -43,8 +47,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Entertainment (ความบันเทิง)",
     chapterShort: "Ch.1 Entertainment",
     english: "conjure up",
-    thai: "นึกภาพขึ้นมา, ทำให้นึกถึง",
-    type: "phr.v."
+    thai: "นึกภาพขึ้นมา",
+    type: "v.",
+    definition: "to make an image, idea, or memory appear in your mind"
   },
   {
     id: "c1_06",
@@ -53,7 +58,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.1 Entertainment",
     english: "conversely",
     thai: "ในทางกลับกัน",
-    type: "adv."
+    type: "adv.",
+    definition: "in the opposite way; used to introduce an idea that contrasts with the previous one"
   },
   {
     id: "c1_07",
@@ -61,8 +67,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Entertainment (ความบันเทิง)",
     chapterShort: "Ch.1 Entertainment",
     english: "couch potatoes",
-    thai: "คนที่เอาแต่นั่งดูทีวีอยู่บนโซฟา",
-    type: "idiom"
+    thai: "คนเอาแต่นั่งดูทีวี",
+    type: "n.",
+    definition: "people who spend a lot of time sitting and watching TV and do little physical activity"
   },
   {
     id: "c1_08",
@@ -71,7 +78,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.1 Entertainment",
     english: "good at",
     thai: "เก่งเรื่อง",
-    type: "adj. phr."
+    type: "adj.",
+    definition: "having the skill or ability to do something well"
   },
   {
     id: "c1_09",
@@ -80,7 +88,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.1 Entertainment",
     english: "influence",
     thai: "อิทธิพล",
-    type: "n./v."
+    type: "n.",
+    definition: "the power to affect how someone thinks, behaves, or develops"
   },
   {
     id: "c1_10",
@@ -89,7 +98,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.1 Entertainment",
     english: "talents",
     thai: "พรสวรรค์",
-    type: "n."
+    type: "n.",
+    definition: "natural abilities or skills that make someone good at doing something"
   },
   {
     id: "c1_11",
@@ -98,7 +108,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.1 Entertainment",
     english: "unbelievable",
     thai: "เหลือเชื่อ",
-    type: "adj."
+    type: "adj.",
+    definition: "very difficult to believe; extremely surprising or impressive"
   },
 
   // บทที่ 2: World Cultures and Cultural Differences
@@ -109,7 +120,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.2 World Cultures",
     english: "ancestor",
     thai: "บรรพบุรุษ",
-    type: "n."
+    type: "n.",
+    definition: "a person in your family who lived a long time ago"
   },
   {
     id: "c2_02",
@@ -117,8 +129,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "World Cultures and Cultural Differences (วัฒนธรรมโลกและความแตกต่างทางวัฒนธรรม)",
     chapterShort: "Ch.2 World Cultures",
     english: "behave",
-    thai: "ประพฤติ, วางตัว",
-    type: "v."
+    thai: "ประพฤติ",
+    type: "v.",
+    definition: "to act in a particular way, especially in front of other people"
   },
   {
     id: "c2_03",
@@ -127,7 +140,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.2 World Cultures",
     english: "challenge",
     thai: "ความท้าทาย",
-    type: "n./v."
+    type: "n.",
+    definition: "something difficult that tests your ability or determination"
   },
   {
     id: "c2_04",
@@ -136,7 +150,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.2 World Cultures",
     english: "cutlery",
     thai: "ช้อนส้อมมีด",
-    type: "n."
+    type: "n.",
+    definition: "knives, forks, and spoons used for eating food"
   },
   {
     id: "c2_05",
@@ -145,7 +160,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.2 World Cultures",
     english: "disturb",
     thai: "รบกวน",
-    type: "v."
+    type: "v.",
+    definition: "to interrupt someone or something and stop them from being calm or continuing what they are doing"
   },
   {
     id: "c2_06",
@@ -154,7 +170,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.2 World Cultures",
     english: "diversity",
     thai: "ความหลากหลาย",
-    type: "n."
+    type: "n.",
+    definition: "a range of many different people, things, or ideas"
   },
   {
     id: "c2_07",
@@ -163,7 +180,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.2 World Cultures",
     english: "explain",
     thai: "อธิบาย",
-    type: "v."
+    type: "v.",
+    definition: "to make something clear by giving details or reasons"
   },
   {
     id: "c2_08",
@@ -171,8 +189,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "World Cultures and Cultural Differences (วัฒนธรรมโลกและความแตกต่างทางวัฒนธรรม)",
     chapterShort: "Ch.2 World Cultures",
     english: "generosity",
-    thai: "ความใจกว้าง, ความเอื้อเฟื้อ",
-    type: "n."
+    thai: "ความใจกว้าง",
+    type: "n.",
+    definition: "the quality of being willing to give money, time, or help freely"
   },
   {
     id: "c2_09",
@@ -181,7 +200,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.2 World Cultures",
     english: "lively",
     thai: "มีชีวิตชีวา",
-    type: "adj."
+    type: "adj.",
+    definition: "full of energy, activity, and excitement"
   },
   {
     id: "c2_10",
@@ -189,8 +209,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "World Cultures and Cultural Differences (วัฒนธรรมโลกและความแตกต่างทางวัฒนธรรม)",
     chapterShort: "Ch.2 World Cultures",
     english: "manner",
-    thai: "มารยาท, กิริยาท่าทาง",
-    type: "n."
+    thai: "มารยาท, กิริยา",
+    type: "n.",
+    definition: "the way in which something is done or the way a person behaves"
   },
   {
     id: "c2_11",
@@ -198,8 +219,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "World Cultures and Cultural Differences (วัฒนธรรมโลกและความแตกต่างทางวัฒนธรรม)",
     chapterShort: "Ch.2 World Cultures",
     english: "mingle",
-    thai: "ปะปน, เข้าสังคมพูดคุยกับผู้อื่น",
-    type: "v."
+    thai: "เข้าสังคมพูดคุย",
+    type: "v.",
+    definition: "to move around and talk with many different people at an event"
   },
   {
     id: "c2_12",
@@ -208,7 +230,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.2 World Cultures",
     english: "reason",
     thai: "เหตุผล",
-    type: "n."
+    type: "n.",
+    definition: "a cause or explanation for why something happens or is done"
   },
   {
     id: "c2_13",
@@ -216,8 +239,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "World Cultures and Cultural Differences (วัฒนธรรมโลกและความแตกต่างทางวัฒนธรรม)",
     chapterShort: "Ch.2 World Cultures",
     english: "tricky",
-    thai: "ยุ่งยาก, ต้องระวัง",
-    type: "adj."
+    thai: "ยุ่งยาก",
+    type: "adj.",
+    definition: "difficult to deal with and needing careful attention"
   },
 
   // บทที่ 3: Fast Fashion
@@ -228,7 +252,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "acknowledge",
     thai: "ยอมรับ",
-    type: "v."
+    type: "v.",
+    definition: "to accept or admit that something is true or exists"
   },
   {
     id: "c3_02",
@@ -237,7 +262,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "alternative",
     thai: "ทางเลือก",
-    type: "n./adj."
+    type: "n.",
+    definition: "something you can choose instead of another thing"
   },
   {
     id: "c3_03",
@@ -246,7 +272,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "apparel",
     thai: "เครื่องแต่งกาย",
-    type: "n."
+    type: "n.",
+    definition: "clothing, especially clothes that are sold in stores"
   },
   {
     id: "c3_04",
@@ -254,8 +281,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Fast Fashion (แฟชั่นเร็ว)",
     chapterShort: "Ch.3 Fast Fashion",
     english: "capitalize",
-    thai: "ฉวยโอกาส, ใช้ประโยชน์",
-    type: "v."
+    thai: "ฉวยโอกาส",
+    type: "v.",
+    definition: "to take advantage of a situation in order to gain something"
   },
   {
     id: "c3_05",
@@ -264,7 +292,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "carbon footprint",
     thai: "รอยเท้าคาร์บอน",
-    type: "n."
+    type: "n.",
+    definition: "the amount of carbon dioxide released into the air because of the activities of a person, group, or product"
   },
   {
     id: "c3_06",
@@ -273,7 +302,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "consequences",
     thai: "ผลที่ตามมา",
-    type: "n."
+    type: "n.",
+    definition: "the results or effects of an action or situation, often negative ones"
   },
   {
     id: "c3_07",
@@ -282,7 +312,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "contamination",
     thai: "การปนเปื้อน",
-    type: "n."
+    type: "n.",
+    definition: "the process of making something dirty or harmful by adding a poisonous or unwanted substance"
   },
   {
     id: "c3_08",
@@ -291,7 +322,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "deforestation",
     thai: "การทำลายป่า",
-    type: "n."
+    type: "n.",
+    definition: "the cutting down or removal of trees from a large area"
   },
   {
     id: "c3_09",
@@ -300,7 +332,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "dramatic",
     thai: "รุนแรง, เห็นได้ชัดมาก",
-    type: "adj."
+    type: "adj.",
+    definition: "sudden, very noticeable, or surprising"
   },
   {
     id: "c3_10",
@@ -309,7 +342,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "eco-friendly",
     thai: "เป็นมิตรต่อสิ่งแวดล้อม",
-    type: "adj."
+    type: "adj.",
+    definition: "not harmful to the environment"
   },
   {
     id: "c3_11",
@@ -318,7 +352,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "ethical",
     thai: "ถูกต้องตามหลักจริยธรรม",
-    type: "adj."
+    type: "adj.",
+    definition: "relating to what is morally right and wrong"
   },
   {
     id: "c3_12",
@@ -327,7 +362,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "harmful",
     thai: "เป็นอันตราย",
-    type: "adj."
+    type: "adj.",
+    definition: "causing damage or injury to someone or something"
   },
   {
     id: "c3_13",
@@ -336,7 +372,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "impact",
     thai: "ผลกระทบ",
-    type: "n./v."
+    type: "n.",
+    definition: "a strong effect that something has on a person, thing, or situation"
   },
   {
     id: "c3_14",
@@ -345,7 +382,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "implement",
     thai: "นำไปปฏิบัติ",
-    type: "v."
+    type: "v.",
+    definition: "to put a plan, idea, or system into action"
   },
   {
     id: "c3_15",
@@ -353,8 +391,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Fast Fashion (แฟชั่นเร็ว)",
     chapterShort: "Ch.3 Fast Fashion",
     english: "improper",
-    thai: "ไม่เหมาะสม, ไม่ถูกต้อง",
-    type: "adj."
+    thai: "ไม่เหมาะสม",
+    type: "adj.",
+    definition: "not correct, suitable, or acceptable"
   },
   {
     id: "c3_16",
@@ -363,7 +402,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "phenomenon",
     thai: "ปรากฏการณ์",
-    type: "n."
+    type: "n.",
+    definition: "something that exists or happens and can be observed, especially something unusual or important"
   },
   {
     id: "c3_17",
@@ -372,7 +412,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "pollutants",
     thai: "สารมลพิษ",
-    type: "n."
+    type: "n.",
+    definition: "substances that make air, water, or soil dirty and harmful"
   },
   {
     id: "c3_18",
@@ -381,7 +422,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "prioritize",
     thai: "จัดลำดับความสำคัญ",
-    type: "v."
+    type: "v.",
+    definition: "to treat something as more important than other things and deal with it first"
   },
   {
     id: "c3_19",
@@ -390,7 +432,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "repurpose",
     thai: "นำไปใช้ใหม่ในรูปแบบอื่น",
-    type: "v."
+    type: "v.",
+    definition: "to use something for a different purpose from the one it was made for"
   },
   {
     id: "c3_20",
@@ -399,7 +442,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.3 Fast Fashion",
     english: "reutilize",
     thai: "นำกลับมาใช้ซ้ำ",
-    type: "v."
+    type: "v.",
+    definition: "to use something again"
   },
 
   // บทที่ 4: Sustainable Living
@@ -410,7 +454,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "sustainable",
     thai: "ยั่งยืน",
-    type: "adj."
+    type: "adj.",
+    definition: "able to continue over a long time without harming the environment or using up resources"
   },
   {
     id: "c4_02",
@@ -419,7 +464,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "sustainability",
     thai: "ความยั่งยืน",
-    type: "n."
+    type: "n.",
+    definition: "the ability to continue something over a long time without damaging the environment or running out of resources"
   },
   {
     id: "c4_03",
@@ -427,8 +473,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Sustainable Living (การใช้ชีวิตอย่างยั่งยืน)",
     chapterShort: "Ch.4 Sustainable Living",
     english: "renewable",
-    thai: "ทดแทนได้, หมุนเวียนได้",
-    type: "adj."
+    thai: "ทดแทนได้",
+    type: "adj.",
+    definition: "able to be replaced naturally, so it will not run out"
   },
   {
     id: "c4_04",
@@ -437,7 +484,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "global",
     thai: "ทั่วโลก",
-    type: "adj."
+    type: "adj.",
+    definition: "relating to the whole world"
   },
   {
     id: "c4_05",
@@ -446,7 +494,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "endangered",
     thai: "ใกล้สูญพันธุ์",
-    type: "adj."
+    type: "adj.",
+    definition: "at risk of dying out completely"
   },
   {
     id: "c4_06",
@@ -455,7 +504,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "domestic",
     thai: "ภายในประเทศ, ในครัวเรือน",
-    type: "adj."
+    type: "adj.",
+    definition: "relating to a person’s own country or to the home and family"
   },
   {
     id: "c4_07",
@@ -463,8 +513,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Sustainable Living (การใช้ชีวิตอย่างยั่งยืน)",
     chapterShort: "Ch.4 Sustainable Living",
     english: "environmentally",
-    thai: "อย่างเกี่ยวกับสิ่งแวดล้อม",
-    type: "adv."
+    thai: "ในด้านสิ่งแวดล้อม",
+    type: "adv.",
+    definition: "in a way that relates to the natural world and how it is affected"
   },
   {
     id: "c4_08",
@@ -473,7 +524,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "waste",
     thai: "ขยะ, ของเสีย",
-    type: "n."
+    type: "n.",
+    definition: "unwanted material that is thrown away"
   },
   {
     id: "c4_09",
@@ -482,7 +534,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "resources",
     thai: "ทรัพยากร",
-    type: "n."
+    type: "n.",
+    definition: "useful things such as water, land, energy, or money that people can use"
   },
   {
     id: "c4_10",
@@ -491,7 +544,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "sources",
     thai: "แหล่งที่มา",
-    type: "n."
+    type: "n.",
+    definition: "places, people, or things from which something comes or is obtained"
   },
   {
     id: "c4_11",
@@ -500,7 +554,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "disposal",
     thai: "การกำจัด",
-    type: "n."
+    type: "n.",
+    definition: "the act of getting rid of something you do not want"
   },
   {
     id: "c4_12",
@@ -509,7 +564,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "shortage",
     thai: "การขาดแคลน",
-    type: "n."
+    type: "n.",
+    definition: "a situation in which there is not enough of something that people need"
   },
   {
     id: "c4_13",
@@ -518,7 +574,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "extinct",
     thai: "สูญพันธุ์",
-    type: "adj."
+    type: "adj.",
+    definition: "no longer existing, because all of its kind have died"
   },
   {
     id: "c4_14",
@@ -527,7 +584,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.4 Sustainable Living",
     english: "threat",
     thai: "ภัยคุกคาม",
-    type: "n."
+    type: "n.",
+    definition: "something that could cause harm or damage"
   },
   {
     id: "c4_15",
@@ -535,8 +593,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Sustainable Living (การใช้ชีวิตอย่างยั่งยืน)",
     chapterShort: "Ch.4 Sustainable Living",
     english: "steadily",
-    thai: "อย่างต่อเนื่อง, สม่ำเสมอ",
-    type: "adv."
+    thai: "อย่างต่อเนื่อง",
+    type: "adv.",
+    definition: "in a regular, continuous way without sudden changes"
   },
   {
     id: "c4_16",
@@ -544,8 +603,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Sustainable Living (การใช้ชีวิตอย่างยั่งยืน)",
     chapterShort: "Ch.4 Sustainable Living",
     english: "massive",
-    thai: "มหาศาล, ขนาดใหญ่มาก",
-    type: "adj."
+    thai: "มหาศาล",
+    type: "adj.",
+    definition: "extremely large in size, amount, or effect"
   },
 
   // บทที่ 5: Healthy Lifestyle
@@ -556,7 +616,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "absorb",
     thai: "ดูดซึม",
-    type: "v."
+    type: "v.",
+    definition: "to take in a liquid, gas, or nutrient through the surface or into the body"
   },
   {
     id: "c5_02",
@@ -565,7 +626,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "adolescent",
     thai: "วัยรุ่น",
-    type: "n./adj."
+    type: "n.",
+    definition: "a young person who is developing from a child into an adult"
   },
   {
     id: "c5_03",
@@ -574,7 +636,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "boost",
     thai: "กระตุ้น, เพิ่มพลัง",
-    type: "v."
+    type: "v.",
+    definition: "to increase or improve something"
   },
   {
     id: "c5_04",
@@ -583,7 +646,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "chronic",
     thai: "เรื้อรัง",
-    type: "adj."
+    type: "adj.",
+    definition: "lasting for a long time or happening again and again"
   },
   {
     id: "c5_05",
@@ -592,7 +656,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "consume",
     thai: "บริโภค",
-    type: "v."
+    type: "v.",
+    definition: "to eat or drink something"
   },
   {
     id: "c5_06",
@@ -600,8 +665,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Healthy Lifestyle (วิถีชีวิตเพื่อสุขภาพ)",
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "cope with something or someone",
-    thai: "รับมือกับสิ่งหรือบุคคล",
-    type: "phr.v."
+    thai: "รับมือกับ",
+    type: "v. phr.",
+    definition: "to deal successfully with a difficult situation or person"
   },
   {
     id: "c5_07",
@@ -609,8 +675,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Healthy Lifestyle (วิถีชีวิตเพื่อสุขภาพ)",
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "crave",
-    thai: "อยากได้มาก, โหยหา",
-    type: "v."
+    thai: "อยากได้มาก",
+    type: "v.",
+    definition: "to have a very strong desire for something, especially a certain food"
   },
   {
     id: "c5_08",
@@ -618,8 +685,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Healthy Lifestyle (วิถีชีวิตเพื่อสุขภาพ)",
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "diet",
-    thai: "อาหารที่กินเป็นประจำ, การควบคุมอาหาร",
-    type: "n."
+    thai: "อาหารที่กินเป็นประจำ",
+    type: "n.",
+    definition: "the food and drink that a person usually eats, or a special plan of eating to control weight or health"
   },
   {
     id: "c5_09",
@@ -628,7 +696,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "digestive",
     thai: "เกี่ยวกับการย่อยอาหาร",
-    type: "adj."
+    type: "adj.",
+    definition: "relating to the process of breaking down food in the body"
   },
   {
     id: "c5_10",
@@ -636,8 +705,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Healthy Lifestyle (วิถีชีวิตเพื่อสุขภาพ)",
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "disrupt",
-    thai: "รบกวน, ทำให้ชะงัก",
-    type: "v."
+    thai: "ทำให้ชะงัก",
+    type: "v.",
+    definition: "to interrupt something and stop it from continuing as normal"
   },
   {
     id: "c5_11",
@@ -645,8 +715,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Healthy Lifestyle (วิถีชีวิตเพื่อสุขภาพ)",
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "excess",
-    thai: "ส่วนเกิน, มากเกินไป",
-    type: "n./adj."
+    thai: "ส่วนเกิน",
+    type: "adj.",
+    definition: "more than is needed, allowed, or usual"
   },
   {
     id: "c5_12",
@@ -655,7 +726,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "fatigue",
     thai: "ความเหนื่อยล้า",
-    type: "n."
+    type: "n.",
+    definition: "a feeling of being extremely tired"
   },
   {
     id: "c5_13",
@@ -664,7 +736,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "immune",
     thai: "มีภูมิคุ้มกัน",
-    type: "adj."
+    type: "adj.",
+    definition: "protected against a disease or not affected by it"
   },
   {
     id: "c5_14",
@@ -673,7 +746,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "insomnia",
     thai: "อาการนอนไม่หลับ",
-    type: "n."
+    type: "n.",
+    definition: "a condition in which a person finds it difficult to fall asleep or stay asleep"
   },
   {
     id: "c5_15",
@@ -681,8 +755,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Healthy Lifestyle (วิถีชีวิตเพื่อสุขภาพ)",
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "instigate",
-    thai: "ยุยง, ก่อให้เกิด",
-    type: "v."
+    thai: "ก่อให้เกิด, ยุยง",
+    type: "v.",
+    definition: "to make something start or happen, especially something bad"
   },
   {
     id: "c5_16",
@@ -691,7 +766,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "metabolic",
     thai: "เกี่ยวกับการเผาผลาญ",
-    type: "adj."
+    type: "adj.",
+    definition: "relating to the chemical processes in the body that change food into energy"
   },
   {
     id: "c5_17",
@@ -700,7 +776,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "nutrient",
     thai: "สารอาหาร",
-    type: "n."
+    type: "n.",
+    definition: "a substance in food that people, animals, and plants need to live and grow"
   },
   {
     id: "c5_18",
@@ -709,7 +786,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "relieve",
     thai: "บรรเทา",
-    type: "v."
+    type: "v.",
+    definition: "to make pain, worry, or a problem less severe"
   },
   {
     id: "c5_19",
@@ -718,7 +796,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "stimulant",
     thai: "สารกระตุ้น",
-    type: "n."
+    type: "n.",
+    definition: "a substance that makes the body or mind more active and alert"
   },
   {
     id: "c5_20",
@@ -727,7 +806,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "supplement",
     thai: "อาหารเสริม",
-    type: "n."
+    type: "n.",
+    definition: "something added to improve or complete something, such as a vitamin pill added to a diet"
   },
   {
     id: "c5_21",
@@ -735,8 +815,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Healthy Lifestyle (วิถีชีวิตเพื่อสุขภาพ)",
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "supply",
-    thai: "จัดหาให้, จัดส่ง",
-    type: "v."
+    thai: "จัดหาให้",
+    type: "v.",
+    definition: "to give or provide something that is needed"
   },
   {
     id: "c5_22",
@@ -744,8 +825,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Healthy Lifestyle (วิถีชีวิตเพื่อสุขภาพ)",
     chapterShort: "Ch.5 Healthy Lifestyle",
     english: "trigger",
-    thai: "ตัวกระตุ้น, สิ่งที่ทำให้เกิดอาการ",
-    type: "n."
+    thai: "ตัวกระตุ้น",
+    type: "n.",
+    definition: "something that causes a reaction or a condition to start"
   },
 
   // บทที่ 6: Sports
@@ -756,7 +838,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.6 Sports",
     english: "diabetes",
     thai: "โรคเบาหวาน",
-    type: "n."
+    type: "n.",
+    definition: "a serious medical condition in which the body cannot control the amount of sugar in the blood"
   },
   {
     id: "c6_02",
@@ -765,7 +848,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.6 Sports",
     english: "ditch",
     thai: "คู, ร่องน้ำ",
-    type: "n."
+    type: "n.",
+    definition: "a long narrow channel dug in the ground, usually to carry water away"
   },
   {
     id: "c6_03",
@@ -773,8 +857,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Sports (กีฬา)",
     chapterShort: "Ch.6 Sports",
     english: "expend",
-    thai: "ใช้ไป, สิ้นเปลือง (เช่น พลังงาน)",
-    type: "v."
+    thai: "ใช้ไป",
+    type: "v.",
+    definition: "to use or spend energy, time, or money"
   },
   {
     id: "c6_04",
@@ -783,7 +868,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.6 Sports",
     english: "management",
     thai: "การจัดการ",
-    type: "n."
+    type: "n.",
+    definition: "the process of controlling, organizing, or dealing with something"
   },
   {
     id: "c6_05",
@@ -792,7 +878,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.6 Sports",
     english: "option",
     thai: "ตัวเลือก",
-    type: "n."
+    type: "n.",
+    definition: "something that you can choose from several possibilities"
   },
   {
     id: "c6_06",
@@ -801,7 +888,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.6 Sports",
     english: "posture",
     thai: "ท่าทาง, การทรงตัว",
-    type: "n."
+    type: "n.",
+    definition: "the position or way in which you hold your body when standing or sitting"
   },
   {
     id: "c6_07",
@@ -809,8 +897,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Sports (กีฬา)",
     chapterShort: "Ch.6 Sports",
     english: "productive",
-    thai: "ได้ผลดี, มีประสิทธิภาพ",
-    type: "adj."
+    thai: "ได้ผลดี",
+    type: "adj.",
+    definition: "achieving a lot or producing good results"
   },
   {
     id: "c6_08",
@@ -818,8 +907,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Sports (กีฬา)",
     chapterShort: "Ch.6 Sports",
     english: "radiant",
-    thai: "เปล่งประกาย, สดใส",
-    type: "adj."
+    thai: "เปล่งประกาย",
+    type: "adj.",
+    definition: "showing happiness and health in a bright, glowing way"
   },
   {
     id: "c6_09",
@@ -828,7 +918,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.6 Sports",
     english: "refreshing",
     thai: "สดชื่น",
-    type: "adj."
+    type: "adj.",
+    definition: "making you feel less tired or less hot, and more energetic"
   },
   {
     id: "c6_10",
@@ -837,7 +928,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.6 Sports",
     english: "tough",
     thai: "แกร่ง, ยากลำบาก",
-    type: "adj."
+    type: "adj.",
+    definition: "strong enough to deal with difficulty, or very hard to do or deal with"
   },
   {
     id: "c6_11",
@@ -846,7 +938,8 @@ const VOCABULARY_DATA = [
     chapterShort: "Ch.6 Sports",
     english: "trigger",
     thai: "กระตุ้น, ทำให้เกิดขึ้น",
-    type: "v."
+    type: "v.",
+    definition: "to cause something to start or happen"
   }
 ];
 
