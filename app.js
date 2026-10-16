@@ -309,30 +309,95 @@
     updateProgressUI();
   }
 
+  // Intelligent Distractor Similarity Algorithm (คัดเลือกช้อยส์ลวงที่มีรูปคำและชนิดคำคล้ายกัน)
+  function getDistractorSimilarityScore(target, candidate, isThaiChoice) {
+    if (target.id === candidate.id) return -999;
+    let score = 0;
+
+    // 1. Same Chapter (บริบทกลุ่มคำในเรื่องเดียวกัน)
+    if (target.chapter === candidate.chapter) score += 14;
+
+    // 2. Part of Speech match (ชนิดคำเหมือนกัน เช่น n. กับ n., v. กับ v., adj. กับ adj.)
+    const posA = (target.type || '').toLowerCase().trim();
+    const posB = (candidate.type || '').toLowerCase().trim();
+    if (posA && posB && posA === posB) score += 16;
+
+    // 3. English word form & length similarity (รูปคำ ความยาวใกล้เคียงกัน)
+    const engA = target.english.toLowerCase();
+    const engB = candidate.english.toLowerCase();
+    const lenDiff = Math.abs(engA.length - engB.length);
+    if (lenDiff <= 1) score += 8;
+    else if (lenDiff <= 3) score += 4;
+
+    // 4. Starting letter match (ขึ้นต้นด้วยอักษรตัวเดียวกัน)
+    if (engA[0] === engB[0]) score += 7;
+
+    // 5. Common Suffixes (ลงท้ายด้วยปัจจัยคล้ายกัน เช่น -tion, -ing, -able, -ly, -ment, -ive, -ous, -ic)
+    const suffixes = ['tion', 'sion', 'ing', 'able', 'ible', 'ment', 'ive', 'ly', 'ous', 'al', 'ic', 'ence', 'ance'];
+    for (const sfx of suffixes) {
+      if (engA.endsWith(sfx) && engB.endsWith(sfx)) {
+        score += 10;
+        break;
+      }
+    }
+
+    // 6. Thai phrasing similarity (กรณีช้อยส์เป็นภาษาไทย ให้รูปคำไทยคล้ายกัน เช่น ขึ้นต้นด้วย การ... หรือ ความ... เหมือนกัน)
+    if (isThaiChoice) {
+      const thaiA = target.thai.trim();
+      const thaiB = candidate.thai.trim();
+      if ((thaiA.startsWith('การ') && thaiB.startsWith('การ')) ||
+          (thaiA.startsWith('ความ') && thaiB.startsWith('ความ'))) {
+        score += 8;
+      }
+      if (Math.abs(thaiA.length - thaiB.length) <= 3) {
+        score += 4;
+      }
+    }
+
+    return score;
+  }
+
   function generateChoices(correctWord, direction) {
     const allWords = VOCABULARY_DATA;
-    // Try to pick distractors from same chapter first, else from all words
-    const chapterWords = allWords.filter(w => w.id !== correctWord.id);
-    const shuffledDistractors = shuffle(chapterWords);
-
     const isThaiChoice = direction === 'eng-thai';
-    const distractors = [];
-    for (const w of shuffledDistractors) {
+    const correctText = isThaiChoice ? correctWord.thai : correctWord.english;
+
+    // Filter candidates (excluding correct answer and duplicate choice texts)
+    const candidates = allWords.filter(w => {
+      if (w.id === correctWord.id) return false;
       const text = isThaiChoice ? w.thai : w.english;
-      const correctText = isThaiChoice ? correctWord.thai : correctWord.english;
-      if (text !== correctText && !distractors.some(d => d.text === text)) {
+      return text !== correctText;
+    });
+
+    // Score candidates with similarity + small random jitter (0-6) so choices stay varied yet tricky
+    const scoredCandidates = candidates.map(w => ({
+      wordObj: w,
+      text: isThaiChoice ? w.thai : w.english,
+      score: getDistractorSimilarityScore(correctWord, w, isThaiChoice) + (Math.random() * 6)
+    }));
+
+    // Sort descending by similarity score
+    scoredCandidates.sort((a, b) => b.score - a.score);
+
+    const distractors = [];
+    const usedTexts = new Set();
+    usedTexts.add(correctText);
+
+    for (const item of scoredCandidates) {
+      if (!usedTexts.has(item.text)) {
+        usedTexts.add(item.text);
         distractors.push({
-          wordObj: w,
-          text: text,
+          wordObj: item.wordObj,
+          text: item.text,
           isCorrect: false
         });
+        if (distractors.length >= 3) break;
       }
-      if (distractors.length >= 3) break;
     }
 
     const correctChoice = {
       wordObj: correctWord,
-      text: isThaiChoice ? correctWord.thai : correctWord.english,
+      text: correctText,
       isCorrect: true
     };
 
@@ -454,8 +519,9 @@
   }
 
   function requeueMissedWord(word) {
-    // Insert word 3 positions ahead or at the end
-    const targetPos = Math.min(state.currentIndex + 4, state.queue.length);
+    // Insert word 3 to 5 positions ahead randomly so it loops back naturally
+    const offset = 3 + Math.floor(Math.random() * 3);
+    const targetPos = Math.min(state.currentIndex + offset, state.queue.length);
     state.queue.splice(targetPos, 0, word);
   }
 
@@ -467,18 +533,19 @@
 
     state.currentIndex++;
 
-    // If we've reached the end of current cycle, start new loop round!
+    // If we've reached the end of current cycle, start new loop round with true Fisher-Yates shuffle!
     if (state.currentIndex >= state.queue.length) {
       state.currentRound++;
-      // Reshuffle active words for endless rotation
       const words = getActiveWords();
-      // Put words with more wrong answers towards the front
-      const sorted = [...words].sort((a, b) => {
+      // Truly randomize all words with Fisher-Yates shuffle first
+      const shuffled = shuffle(words);
+      // Prioritize words with errors towards the front while preserving random order
+      shuffled.sort((a, b) => {
         const errA = (state.wordStats[a.id]?.wrong || 0);
         const errB = (state.wordStats[b.id]?.wrong || 0);
-        return errB - errA + (Math.random() - 0.5);
+        return errB - errA;
       });
-      state.queue = sorted;
+      state.queue = shuffled;
       state.currentIndex = 0;
     }
 
