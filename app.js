@@ -278,7 +278,9 @@
     state.activeQuestionDirection = dir;
 
     // Set UI Tags
-    elements.currentChapterTag.textContent = word.chapterTitle;
+    if (elements.currentChapterTag) {
+      elements.currentChapterTag.textContent = word.chapterTitle;
+    }
     elements.posBadge.textContent = word.type || 'v.';
 
     // Reset is-definition class
