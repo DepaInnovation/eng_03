@@ -36,7 +36,10 @@
         </div>
         <div class="brand-text">
           <h1>VocabLoop <span class="badge-tag">Endless Quiz</span></h1>
-          <p class="subtitle">ท่องศัพท์อังกฤษ สำหรับสอบ กลุ่ม 03 </p>
+          <p class="subtitle">
+            <span class="lbl-full">ท่องศัพท์อังกฤษ สำหรับสอบ กลุ่ม 03</span>
+            <span class="lbl-short">ท่องศัพท์ กลุ่ม 03</span>
+          </p>
         </div>
       </div>
 
@@ -49,7 +52,7 @@
               d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3.5z" />
           </svg>
           <span class="streak-count" id="streakCount">0</span>
-          <span class="streak-label">Streak</span>
+          <span class="streak-label"><span class="lbl-full">Streak</span></span>
         </div>
 
         <!-- Audio toggle with SVG Speaker Icon -->
@@ -83,43 +86,55 @@
     <!-- Navigation / Mode Tabs with Vector Icons -->
     <nav class="mode-navigation">
       <button class="nav-tab active" data-mode="quiz" id="tabQuiz">
-        <svg class="tab-icon-svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        <svg class="tab-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10" />
           <circle cx="12" cy="12" r="6" />
           <circle cx="12" cy="12" r="2" />
         </svg>
-        <span class="tab-label">Speed Quiz (4 ช้อยส์)</span>
+        <span class="tab-label">
+          <span class="lbl-full">Speed Quiz (4 ช้อยส์)</span>
+          <span class="lbl-short">Speed Quiz</span>
+        </span>
       </button>
 
       <button class="nav-tab" data-mode="flashcard" id="tabFlashcard">
-        <svg class="tab-icon-svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        <svg class="tab-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect width="16" height="16" x="6" y="6" rx="2" />
           <path d="m18 6-4-4H4a2 2 0 0 0-2 2v12" />
         </svg>
-        <span class="tab-label">Flashcard (การ์ดพลิก)</span>
+        <span class="tab-label">
+          <span class="lbl-full">Flashcard (การ์ดพลิก)</span>
+          <span class="lbl-short">Flashcard</span>
+        </span>
       </button>
 
       <button class="nav-tab" data-mode="match" id="tabMatch">
-        <svg class="tab-icon-svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        <svg class="tab-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect width="7" height="7" x="3" y="3" rx="1" />
           <rect width="7" height="7" x="14" y="3" rx="1" />
           <rect width="7" height="7" x="14" y="14" rx="1" />
           <rect width="7" height="7" x="3" y="14" rx="1" />
         </svg>
-        <span class="tab-label">จับคู่คำศัพท์</span>
+        <span class="tab-label">
+          <span class="lbl-full">จับคู่คำศัพท์</span>
+          <span class="lbl-short">จับคู่</span>
+        </span>
       </button>
 
       <button class="nav-tab" data-mode="list" id="tabList">
-        <svg class="tab-icon-svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        <svg class="tab-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
           <path d="M6 6h10" />
           <path d="M6 10h7" />
         </svg>
-        <span class="tab-label">คลังคำศัพท์ (93)</span>
+        <span class="tab-label">
+          <span class="lbl-full">คลังคำศัพท์ (93)</span>
+          <span class="lbl-short">คลังศัพท์</span>
+        </span>
       </button>
     </nav>
 
@@ -150,19 +165,29 @@
         <div class="modifier-group">
           <span class="modifier-label">ทิศทาง:</span>
           <div class="segmented-control" id="directionControl">
-            <button class="seg-btn active" data-dir="eng-thai" title="โจทย์อังกฤษ ➔ ช้อยส์ไทย">อังกฤษ ➔ ไทย</button>
-            <button class="seg-btn" data-dir="def-eng" title="โจทย์คำจำกัดความภาษาอังกฤษ ➔ ช้อยส์คำศัพท์">ความหมาย Eng ➔ ศัพท์</button>
-            <button class="seg-btn" data-dir="thai-eng" title="โจทย์ไทย ➔ ช้อยส์อังกฤษ">ไทย ➔ อังกฤษ</button>
+            <button class="seg-btn active" data-dir="eng-thai" title="โจทย์อังกฤษ ➔ ช้อยส์ไทย">
+              <span class="lbl-full">อังกฤษ ➔ ไทย</span>
+              <span class="lbl-short">ENG ➔ TH</span>
+            </button>
+            <button class="seg-btn" data-dir="def-eng" title="โจทย์คำจำกัดความภาษาอังกฤษ ➔ ช้อยส์คำศัพท์">
+              <span class="lbl-full">ความหมาย Eng ➔ ศัพท์</span>
+              <span class="lbl-short">DEF ➔ ENG</span>
+            </button>
+            <button class="seg-btn" data-dir="thai-eng" title="โจทย์ไทย ➔ ช้อยส์อังกฤษ">
+              <span class="lbl-full">ไทย ➔ อังกฤษ</span>
+              <span class="lbl-short">TH ➔ ENG</span>
+            </button>
             <button class="seg-btn" data-dir="mixed" title="สุ่มทิศทางทุกรูปแบบ">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:3px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:2px;">
                 <path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22" />
                 <path d="m18 2 4 4-4 4" />
                 <path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2" />
                 <path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8" />
                 <path d="m18 14 4 4-4 4" />
               </svg>
-              <span>สุ่มผสม</span>
+              <span class="lbl-full">สุ่มผสม</span>
+              <span class="lbl-short">สุ่ม</span>
             </button>
           </div>
         </div>
@@ -207,7 +232,7 @@
                   </svg>
                   <span id="wrongCounter">0</span>
                 </span>
-                <span class="accuracy-text">แม่นยำ <strong id="accuracyRate">100%</strong></span>
+                <span class="accuracy-text"><span class="lbl-full">แม่นยำ </span><strong id="accuracyRate">100%</strong></span>
               </div>
             </div>
           </div>
@@ -277,7 +302,10 @@
                 stroke-width="2">
                 <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
               </svg>
-              <span>ระบบวนศัพท์หมุนเวียนต่อเนื่อง: คำที่ตอบผิดจะถูกวนกลับมาให้ตอบซ้ำจนกว่าจะจำได้</span>
+              <span>
+                <span class="lbl-full">ระบบวนศัพท์หมุนเวียนต่อเนื่อง: คำที่ตอบผิดจะถูกวนกลับมาให้ตอบซ้ำจนกว่าจะจำได้</span>
+                <span class="lbl-short">วนศัพท์อัตโนมัติ</span>
+              </span>
             </div>
             <button class="skip-btn" id="btnSkip">ข้ามคำนี้ ➔</button>
           </div>

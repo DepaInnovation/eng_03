@@ -243,7 +243,7 @@
     const current = state.currentIndex + 1;
     const percentage = total > 0 ? Math.min(100, Math.round((current / total) * 100)) : 0;
 
-    elements.roundBadge.textContent = `รอบที่ ${state.currentRound} • คำที่ ${current}/${total}`;
+    elements.roundBadge.innerHTML = `<span class="lbl-full">รอบที่ ${state.currentRound} • คำที่ </span><span class="lbl-short">คำที่ </span>${current}/${total}`;
     elements.progressBarFill.style.width = `${percentage}%`;
 
     elements.correctCounter.textContent = state.correctCount;

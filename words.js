@@ -29,7 +29,7 @@ const VOCABULARY_DATA = [
     english: "attention spans",
     thai: "ช่วงเวลาที่จดจ่อได้",
     type: "n.",
-    definition: "the length of time a person can focus on one thing before losing interest"
+    definition: "the length of time for which a person is able to concentrate mentally on a particular activity"
   },
   {
     id: "c1_04",
@@ -39,7 +39,7 @@ const VOCABULARY_DATA = [
     english: "binge-watching",
     thai: "การดูรวดเดียวหลายตอน",
     type: "v.",
-    definition: "watching many episodes of a TV series one after another in a single session"
+    definition: "to watch several episodes of a television series or program one after another"
   },
   {
     id: "c1_05",
@@ -49,7 +49,7 @@ const VOCABULARY_DATA = [
     english: "conjure up",
     thai: "นึกภาพขึ้นมา",
     type: "v.",
-    definition: "to make an image, idea, or memory appear in your mind"
+    definition: "(think of) to make a picture or idea appear in someone's mind"
   },
   {
     id: "c1_06",
@@ -59,7 +59,7 @@ const VOCABULARY_DATA = [
     english: "conversely",
     thai: "ในทางกลับกัน",
     type: "adv.",
-    definition: "in the opposite way; used to introduce an idea that contrasts with the previous one"
+    definition: "in an opposite way"
   },
   {
     id: "c1_07",
@@ -69,7 +69,7 @@ const VOCABULARY_DATA = [
     english: "couch potatoes",
     thai: "คนเอาแต่นั่งดูทีวี",
     type: "n.",
-    definition: "people who spend a lot of time sitting and watching TV and do little physical activity"
+    definition: "a person who watches a lot of television and does not have an active life"
   },
   {
     id: "c1_08",
@@ -121,7 +121,7 @@ const VOCABULARY_DATA = [
     english: "ancestor",
     thai: "บรรพบุรุษ",
     type: "n.",
-    definition: "a person in your family who lived a long time ago"
+    definition: "a person related to you who lived a long time ago"
   },
   {
     id: "c2_02",
@@ -151,7 +151,7 @@ const VOCABULARY_DATA = [
     english: "cutlery",
     thai: "ช้อนส้อมมีด",
     type: "n.",
-    definition: "knives, forks, and spoons used for eating food"
+    definition: "knives, forks, and spoons"
   },
   {
     id: "c2_05",
@@ -161,7 +161,7 @@ const VOCABULARY_DATA = [
     english: "disturb",
     thai: "รบกวน",
     type: "v.",
-    definition: "to interrupt someone or something and stop them from being calm or continuing what they are doing"
+    definition: "to interrupt what someone is doing"
   },
   {
     id: "c2_06",
@@ -181,7 +181,7 @@ const VOCABULARY_DATA = [
     english: "explain",
     thai: "อธิบาย",
     type: "v.",
-    definition: "to make something clear by giving details or reasons"
+    definition: "to make something clear or easy to understand by describing or giving information about it"
   },
   {
     id: "c2_08",
@@ -201,7 +201,7 @@ const VOCABULARY_DATA = [
     english: "lively",
     thai: "มีชีวิตชีวา",
     type: "adj.",
-    definition: "full of energy, activity, and excitement"
+    definition: "full of energy and enthusiasm"
   },
   {
     id: "c2_10",
@@ -231,7 +231,7 @@ const VOCABULARY_DATA = [
     english: "reason",
     thai: "เหตุผล",
     type: "n.",
-    definition: "a cause or explanation for why something happens or is done"
+    definition: "the cause of an event or situation or something suggested as an explanation"
   },
   {
     id: "c2_13",
@@ -241,7 +241,7 @@ const VOCABULARY_DATA = [
     english: "tricky",
     thai: "ยุ่งยาก",
     type: "adj.",
-    definition: "difficult to deal with and needing careful attention"
+    definition: "difficult to deal with and needing careful attention or skill"
   },
 
   // บทที่ 3: Fast Fashion
@@ -253,7 +253,7 @@ const VOCABULARY_DATA = [
     english: "acknowledge",
     thai: "ยอมรับ",
     type: "v.",
-    definition: "to accept or admit that something is true or exists"
+    definition: "to accept that something is true"
   },
   {
     id: "c3_02",
@@ -273,7 +273,7 @@ const VOCABULARY_DATA = [
     english: "apparel",
     thai: "เครื่องแต่งกาย",
     type: "n.",
-    definition: "clothing, especially clothes that are sold in stores"
+    definition: "clothes of a particular type when they are being sold in a shop"
   },
   {
     id: "c3_04",
@@ -281,9 +281,9 @@ const VOCABULARY_DATA = [
     chapterTitle: "Fast Fashion (แฟชั่นเร็ว)",
     chapterShort: "Ch.3 Fast Fashion",
     english: "capitalize",
-    thai: "ฉวยโอกาส",
+    thai: "จัดหาเงินทุนให้ธุรกิจ, ฉวยโอกาส",
     type: "v.",
-    definition: "to take advantage of a situation in order to gain something"
+    definition: "to supply money to a business so that it can develop or operate as it should"
   },
   {
     id: "c3_05",
@@ -293,7 +293,7 @@ const VOCABULARY_DATA = [
     english: "carbon footprint",
     thai: "รอยเท้าคาร์บอน",
     type: "n.",
-    definition: "the amount of carbon dioxide released into the air because of the activities of a person, group, or product"
+    definition: "the amount of greenhouse gases and specifically carbon dioxide emitted by something (such as a person's activities or a product's manufacture and transport) during a given period"
   },
   {
     id: "c3_06",
@@ -303,7 +303,7 @@ const VOCABULARY_DATA = [
     english: "consequences",
     thai: "ผลที่ตามมา",
     type: "n.",
-    definition: "the results or effects of an action or situation, often negative ones"
+    definition: "bad results of an action or situation"
   },
   {
     id: "c3_07",
@@ -313,7 +313,7 @@ const VOCABULARY_DATA = [
     english: "contamination",
     thai: "การปนเปื้อน",
     type: "n.",
-    definition: "the process of making something dirty or harmful by adding a poisonous or unwanted substance"
+    definition: "the process of making something dirty or poisonous, or the state of containing unwanted or dangerous substances"
   },
   {
     id: "c3_08",
@@ -333,7 +333,7 @@ const VOCABULARY_DATA = [
     english: "dramatic",
     thai: "รุนแรง, เห็นได้ชัดมาก",
     type: "adj.",
-    definition: "sudden, very noticeable, or surprising"
+    definition: "sudden and extreme"
   },
   {
     id: "c3_10",
@@ -353,7 +353,7 @@ const VOCABULARY_DATA = [
     english: "ethical",
     thai: "ถูกต้องตามหลักจริยธรรม",
     type: "adj.",
-    definition: "relating to what is morally right and wrong"
+    definition: "morally right"
   },
   {
     id: "c3_12",
@@ -403,7 +403,7 @@ const VOCABULARY_DATA = [
     english: "phenomenon",
     thai: "ปรากฏการณ์",
     type: "n.",
-    definition: "something that exists or happens and can be observed, especially something unusual or important"
+    definition: "a fact or an event in nature or society"
   },
   {
     id: "c3_17",
@@ -413,7 +413,7 @@ const VOCABULARY_DATA = [
     english: "pollutants",
     thai: "สารมลพิษ",
     type: "n.",
-    definition: "substances that make air, water, or soil dirty and harmful"
+    definition: "harmful substances that cause pollution"
   },
   {
     id: "c3_18",
@@ -423,7 +423,7 @@ const VOCABULARY_DATA = [
     english: "prioritize",
     thai: "จัดลำดับความสำคัญ",
     type: "v.",
-    definition: "to treat something as more important than other things and deal with it first"
+    definition: "to arrange in order of importance"
   },
   {
     id: "c3_19",
@@ -617,7 +617,7 @@ const VOCABULARY_DATA = [
     english: "absorb",
     thai: "ดูดซึม",
     type: "v.",
-    definition: "to take in a liquid, gas, or nutrient through the surface or into the body"
+    definition: "to take something in gradually or slowly"
   },
   {
     id: "c5_02",
@@ -627,7 +627,7 @@ const VOCABULARY_DATA = [
     english: "adolescent",
     thai: "วัยรุ่น",
     type: "n.",
-    definition: "a young person who is developing from a child into an adult"
+    definition: "a young person who is developing into an adult"
   },
   {
     id: "c5_03",
@@ -647,7 +647,7 @@ const VOCABULARY_DATA = [
     english: "chronic",
     thai: "เรื้อรัง",
     type: "adj.",
-    definition: "lasting for a long time or happening again and again"
+    definition: "continuing for a long time"
   },
   {
     id: "c5_05",
@@ -667,7 +667,7 @@ const VOCABULARY_DATA = [
     english: "cope with something or someone",
     thai: "รับมือกับ",
     type: "v. phr.",
-    definition: "to deal successfully with a difficult situation or person"
+    definition: "to deal successfully with a difficult situation or a person in a difficult situation"
   },
   {
     id: "c5_07",
@@ -717,7 +717,7 @@ const VOCABULARY_DATA = [
     english: "excess",
     thai: "ส่วนเกิน",
     type: "adj.",
-    definition: "more than is needed, allowed, or usual"
+    definition: "more than necessary; too much"
   },
   {
     id: "c5_12",
@@ -737,7 +737,7 @@ const VOCABULARY_DATA = [
     english: "immune",
     thai: "มีภูมิคุ้มกัน",
     type: "adj.",
-    definition: "protected against a disease or not affected by it"
+    definition: "protected against diseases by particular substances in the blood"
   },
   {
     id: "c5_14",
@@ -757,7 +757,7 @@ const VOCABULARY_DATA = [
     english: "instigate",
     thai: "ก่อให้เกิด, ยุยง",
     type: "v.",
-    definition: "to make something start or happen, especially something bad"
+    definition: "to cause an event or situation to happen by making a set of actions"
   },
   {
     id: "c5_16",
@@ -767,7 +767,7 @@ const VOCABULARY_DATA = [
     english: "metabolic",
     thai: "เกี่ยวกับการเผาผลาญ",
     type: "adj.",
-    definition: "relating to the chemical processes in the body that change food into energy"
+    definition: "relating to metabolism (the process by which the body uses food for energy and growth)"
   },
   {
     id: "c5_17",
@@ -797,7 +797,7 @@ const VOCABULARY_DATA = [
     english: "stimulant",
     thai: "สารกระตุ้น",
     type: "n.",
-    definition: "a substance that makes the body or mind more active and alert"
+    definition: "a substance, such as a drug, that makes the mind or body more active"
   },
   {
     id: "c5_20",
@@ -807,7 +807,7 @@ const VOCABULARY_DATA = [
     english: "supplement",
     thai: "อาหารเสริม",
     type: "n.",
-    definition: "something added to improve or complete something, such as a vitamin pill added to a diet"
+    definition: "something that is added to something else in order to improve or complete it; something extra"
   },
   {
     id: "c5_21",
@@ -817,7 +817,7 @@ const VOCABULARY_DATA = [
     english: "supply",
     thai: "จัดหาให้",
     type: "v.",
-    definition: "to give or provide something that is needed"
+    definition: "to provide something that is wanted or needed"
   },
   {
     id: "c5_22",
@@ -827,7 +827,7 @@ const VOCABULARY_DATA = [
     english: "trigger",
     thai: "ตัวกระตุ้น",
     type: "n.",
-    definition: "something that causes a reaction or a condition to start"
+    definition: "an event, situation, etc. that causes the start of something, especially something bad"
   },
 
   // บทที่ 6: Sports

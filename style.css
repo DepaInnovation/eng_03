@@ -140,6 +140,14 @@ body {
   min-height: 100vh;
 }
 
+/* Responsive Label Utilities */
+.lbl-short {
+  display: none;
+}
+.lbl-full {
+  display: inline;
+}
+
 /* ================= Header ================= */
 .app-header {
   display: flex;
@@ -1443,126 +1451,609 @@ body {
 
 /* Mobile Devices & Small Tablets (< 768px) */
 @media (max-width: 768px) {
-  .app-container {
-    padding: 14px 12px 32px;
+  /* Switch to compact responsive labels */
+  .lbl-full {
+    display: none !important;
+  }
+  .lbl-short {
+    display: inline !important;
   }
 
+  .app-container {
+    padding: 8px 10px 24px !important;
+  }
+
+  /* Compact Sleek Header (Fixes Screenshot 3) */
   .app-header {
-    margin-bottom: 14px;
-    padding-bottom: 12px;
+    margin-bottom: 8px !important;
+    padding-bottom: 8px !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+  }
+
+  .header-brand {
+    gap: 7px !important;
+    min-width: 0 !important;
+  }
+
+  .brand-badge {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .brand-badge svg {
+    width: 16px !important;
+    height: 16px !important;
   }
 
   .brand-text h1 {
-    font-size: 1.2rem;
+    font-size: 1.05rem !important;
+    gap: 4px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+
+  .badge-tag {
+    display: none !important;
   }
 
   .subtitle {
-    font-size: 0.76rem;
+    font-size: 0.72rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 1px !important;
+    white-space: nowrap !important;
   }
 
-  /* Mode Navigation in 2x2 grid on mobile */
+  .header-actions {
+    gap: 5px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .streak-badge {
+    padding: 3px 8px !important;
+    font-size: 0.76rem !important;
+    gap: 4px !important;
+  }
+
+  .icon-btn {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+  }
+
+  .icon-btn svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Mode Navigation: Single Clean Row */
   .mode-navigation {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+    display: flex !important;
+    gap: 3px !important;
+    padding: 2px !important;
+    margin-bottom: 8px !important;
+    border-radius: 10px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+
+  .mode-navigation::-webkit-scrollbar {
+    display: none !important;
   }
 
   .nav-tab {
-    font-size: 0.82rem;
-    padding: 8px 10px;
+    flex: 1 1 0 !important;
+    padding: 6px 4px !important;
+    font-size: 0.75rem !important;
+    gap: 3px !important;
+    border-radius: 7px !important;
+    white-space: nowrap !important;
+    min-width: 0 !important;
   }
 
+  .tab-icon-svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Controls Bar (Fixes Screenshot 2: No more heavy box, no scrollbar artifact) */
   .controls-bar {
-    padding: 14px 14px;
-    margin-bottom: 18px;
-    border-radius: var(--radius-md);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 0 6px !important;
+    margin-bottom: 6px !important;
+    position: relative !important;
+    gap: 6px !important;
   }
 
+  .selector-header {
+    margin-bottom: 2px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .selector-title {
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    color: var(--text-dim) !important;
+  }
+
+  .selector-hint {
+    display: none !important;
+  }
+
+  .chapter-pills-scroll {
+    padding-bottom: 0 !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    overflow-x: auto !important;
+  }
+
+  .chapter-pills-scroll::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .chapter-pills {
+    gap: 4px !important;
+  }
+
+  .pill {
+    padding: 4px 9px !important;
+    font-size: 0.72rem !important;
+    background: #ffffff !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 999px !important;
+    box-shadow: 0 1px 2px rgba(80, 50, 20, 0.04) !important;
+  }
+
+  .pill.active {
+    background: var(--accent-brown) !important;
+    color: #ffffff !important;
+    border-color: var(--accent-brown) !important;
+  }
+
+  .quiz-modifiers {
+    padding-top: 4px !important;
+    border-top: none !important;
+    gap: 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .modifier-group:first-child {
+    width: 100% !important;
+  }
+
+  .modifier-label {
+    display: none !important;
+  }
+
+  .segmented-control {
+    width: 100% !important;
+    display: flex !important;
+    gap: 2px !important;
+    padding: 2px !important;
+    background: var(--bg-secondary) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-subtle) !important;
+  }
+
+  .seg-btn {
+    flex: 1 !important;
+    padding: 5px 2px !important;
+    font-size: 0.7rem !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    border-radius: 6px !important;
+  }
+
+  .toggle-group {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+  }
+
+  .switch-label {
+    gap: 4px !important;
+  }
+
+  .switch-text {
+    font-size: 0.7rem !important;
+    color: var(--text-dim) !important;
+  }
+
+  .slider {
+    width: 25px !important;
+    height: 14px !important;
+  }
+
+  .slider::after {
+    width: 10px !important;
+    height: 10px !important;
+    top: 2px !important;
+    left: 2px !important;
+  }
+
+  .switch-label input:checked + .slider::after {
+    transform: translateX(11px) !important;
+  }
+
+  /* ================= QUIZ CARD (Fixes Screenshot 4: No box-in-a-box) ================= */
   .quiz-card {
-    padding: 20px 14px;
-    border-radius: var(--radius-md);
+    padding: 13px 12px 10px !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    border: 1px solid var(--border-subtle) !important;
+    box-shadow: 0 2px 12px rgba(80, 50, 20, 0.05) !important;
   }
 
-  /* 1 Column for Choice buttons on mobile: easiest thumb reach! */
+  .quiz-meta-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 6px !important;
+    gap: 4px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .meta-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    min-width: 0 !important;
+  }
+
+  .round-badge {
+    font-size: 0.68rem !important;
+    padding: 2px 6px !important;
+    border-radius: 5px !important;
+    white-space: nowrap !important;
+  }
+
+  .chapter-tag {
+    font-size: 0.72rem !important;
+    color: var(--text-dim) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 130px !important;
+  }
+
+  .stats-mini {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .stat-pill {
+    font-size: 0.68rem !important;
+    padding: 1px 5px !important;
+  }
+
+  .accuracy-text {
+    font-size: 0.7rem !important;
+    color: var(--text-muted) !important;
+  }
+
+  .progress-bar-container {
+    height: 2.5px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Question Box: Completely Flat, Airy & Seamless! */
+  .question-container {
+    background: transparent !important;
+    border: none !important;
+    padding: 4px 0 8px !important;
+    margin-bottom: 6px !important;
+    text-align: center !important;
+  }
+
+  .question-header {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .part-of-speech {
+    font-size: 0.68rem !important;
+    padding: 1px 5px !important;
+  }
+
+  .speak-btn {
+    padding: 2px 7px !important;
+    font-size: 0.7rem !important;
+  }
+
+  .question-prompt {
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem) !important;
+    font-weight: 800 !important;
+    margin-bottom: 2px !important;
+    line-height: 1.25 !important;
+    color: var(--text-main) !important;
+  }
+
+  .question-prompt.is-definition {
+    font-size: 0.95rem !important;
+    font-weight: 550 !important;
+    line-height: 1.5 !important;
+    margin: 2px auto 4px !important;
+    padding: 0 !important;
+  }
+
+  .question-subtext {
+    font-size: 0.72rem !important;
+    color: var(--text-dim) !important;
+  }
+
+  /* Choice Buttons: Perfectly proportioned to fit all 4 choices on screen! */
   .choices-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+    margin-bottom: 10px !important;
   }
 
   .choice-btn {
-    min-height: 60px;
-    padding: 14px 16px;
-    font-size: 0.96rem;
+    min-height: 46px !important;
+    padding: 10px 12px !important;
+    font-size: 0.92rem !important;
+    border-radius: 10px !important;
+    border: 1px solid var(--border-subtle) !important;
+    background: var(--bg-card-subtle) !important;
+    line-height: 1.35 !important;
   }
 
-  .question-container {
-    padding: 18px 12px;
-    margin-bottom: 18px;
-  }
-
-  .match-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .match-card {
-    min-height: 74px;
-    font-size: 0.88rem;
-    padding: 10px;
-  }
-
-  .flashcard-actions {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .flip-card-container {
-    height: 290px;
-  }
-
-  .feedback-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .btn-next {
-    width: 100%;
-    justify-content: center;
-    padding: 10px;
-  }
-
-  .search-box {
-    width: 100%;
-  }
-
-  .quiz-footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .skip-btn {
-    width: 100%;
-    text-align: center;
-    padding: 8px;
-    background: var(--bg-secondary);
-  }
-}
-
-/* Extra Small Phones (< 420px) */
-@media (max-width: 420px) {
-  .brand-badge {
-    width: 38px;
-    height: 38px;
-  }
-
-  .brand-text h1 {
-    font-size: 1.1rem;
+  .choice-btn:hover:not(:disabled) {
+    transform: none !important;
+    background: #ffffff !important;
   }
 
   .choice-key {
-    width: 22px;
-    height: 22px;
-    font-size: 0.75rem;
-    margin-right: 8px;
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 0.72rem !important;
+    margin-right: 8px !important;
+    border-radius: 5px !important;
+  }
+
+  /* Feedback Banner */
+  .feedback-banner {
+    padding: 10px 12px !important;
+    margin-bottom: 10px !important;
+    border-radius: 10px !important;
+    gap: 6px !important;
+  }
+
+  .feedback-content {
+    gap: 7px !important;
+  }
+
+  .feedback-icon {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .feedback-info h4 {
+    font-size: 0.82rem !important;
+  }
+
+  .feedback-info p {
+    font-size: 0.76rem !important;
+  }
+
+  .btn-next {
+    padding: 7px 12px !important;
+    font-size: 0.8rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Quiz Footer (Fixes Screenshot 5: Clean single line) */
+  .quiz-footer {
+    padding-top: 8px !important;
+    border-top: 1px solid var(--border-subtle) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  .loop-indicator {
+    font-size: 0.72rem !important;
+    color: var(--text-dim) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    line-height: 1.2 !important;
+  }
+
+  .skip-btn {
+    width: auto !important;
+    background: transparent !important;
+    padding: 3px 6px !important;
+    font-size: 0.74rem !important;
+    color: var(--text-muted) !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ================= FLASHCARD ================= */
+  .flashcard-wrapper {
+    gap: 10px !important;
+  }
+
+  .card-instruction {
+    font-size: 0.74rem !important;
+  }
+
+  .flip-card-container {
+    height: 250px !important;
+  }
+
+  .flip-card-front, .flip-card-back {
+    padding: 14px 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .card-word {
+    font-size: 1.65rem !important;
+  }
+
+  .card-translation {
+    font-size: 1.3rem !important;
+  }
+
+  .card-original {
+    font-size: 0.88rem !important;
+  }
+
+  .card-def {
+    font-size: 0.74rem !important;
+    padding: 5px 8px !important;
+    margin-top: 5px !important;
+  }
+
+  .flashcard-actions {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .fc-btn {
+    padding: 9px 8px !important;
+    border-radius: 10px !important;
+    gap: 6px !important;
+  }
+
+  .fc-btn .btn-text strong {
+    font-size: 0.8rem !important;
+  }
+
+  .fc-btn .btn-text small {
+    font-size: 0.66rem !important;
+  }
+
+  /* ================= MATCHING GAME ================= */
+  .match-container {
+    padding: 12px 10px !important;
+    border-radius: 14px !important;
+  }
+
+  .match-header {
+    margin-bottom: 8px !important;
+  }
+
+  .match-header h3 {
+    font-size: 1rem !important;
+  }
+
+  .match-header .subtitle {
+    display: none !important;
+  }
+
+  .stat-badge {
+    padding: 3px 8px !important;
+    font-size: 0.74rem !important;
+  }
+
+  .btn-secondary {
+    padding: 4px 8px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .match-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .match-card {
+    min-height: 56px !important;
+    font-size: 0.8rem !important;
+    padding: 6px !important;
+    border-radius: 8px !important;
+  }
+
+  .card-lang-tag {
+    font-size: 0.62rem !important;
+  }
+
+  /* ================= WORD LIST ================= */
+  .wordlist-container {
+    padding: 12px 10px !important;
+    border-radius: 14px !important;
+  }
+
+  .wordlist-header {
+    margin-bottom: 10px !important;
+    gap: 6px !important;
+  }
+
+  .search-box {
+    width: 100% !important;
+    padding: 6px 10px !important;
+    font-size: 0.84rem !important;
+  }
+
+  .filter-summary {
+    font-size: 0.74rem !important;
+  }
+
+  .word-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+    max-height: 460px !important;
+  }
+
+  .word-item-card {
+    padding: 9px 10px !important;
+    border-radius: 9px !important;
+  }
+
+  .word-item-title {
+    font-size: 0.94rem !important;
+  }
+
+  .word-item-meaning {
+    font-size: 0.82rem !important;
+  }
+
+  .word-item-def {
+    font-size: 0.7rem !important;
   }
 }
+
+/* Extra Small Phones (< 380px) */
+@media (max-width: 380px) {
+  .brand-badge {
+    display: none !important;
+  }
+
+  .brand-text h1 {
+    font-size: 0.98rem !important;
+  }
+
+  .subtitle {
+    display: none !important;
+  }
+
+  .nav-tab {
+    padding: 5px 3px !important;
+    font-size: 0.7rem !important;
+  }
+
+  .seg-btn {
+    padding: 4px 1px !important;
+    font-size: 0.64rem !important;
+  }
+}
+
+
